@@ -1,0 +1,836 @@
+\documentclass[a4paper,10pt]{book}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage[lflt]{floatflt}
+\usepackage{/usr/share/texmf/tex/latex/asymptote/asymptote}
+\setcounter{chapter}{2}
+\voffset	=-10.0mm
+\hoffset	=-0.5in
+\textheight	=614pt
+\footskip	=-40mm
+%\topmargin	=30mm	
+%\oddsidemargin	=-10.mm		
+\evensidemargin	=5.mm		
+%\headheight	=0.mm
+%\headsep	=0.mm
+%\textheight	=220.mm
+\textwidth	=180.mm
+\title{Ders Notları}
+\date{}
+\def\chaptername{Bölüm}
+\newtheoremstyle{italik}{}{}{\normalfont}{}{\bfseries}{.}{ }{} % basic definitions, use roman font: 
+\theoremstyle{italik}
+\newtheorem{ornek}{Örnek}[chapter]
+\newtheorem*{cozum}{Çözüm}
+\newtheorem*{tanim}{Tanım}
+\begin{document}
+\maketitle
+\section{Doğrusal Denklem Sistemleri}
+\subsection{Bir Bilinmeyenli Doğrusal Denklem}
+$a,b\in\mathbb{R}$, $a\not=0$ ve $x$ bilinmeyen olmak üzere $ax+b=0$ şeklindeki denklemlere "bir bilinmeyenli
+doğrusal denklem" denir.Bu denklemi sağlayan tek bir reel sayı vardır.
+
+\begin{ornek}
+\quad\\
+$3x-2=10$ denkleminin çözüm kümesini bulunuz.
+\end{ornek}
+
+\begin{cozum}
+	\begin{eqnarray*}
+		3x-2         & = & 10 \\
+		3x-2+2       & = & 10+2 \\
+		3x           & = & 12 \\
+		\frac{3x}{3} & = & \frac{12}{3} \\
+		x            & = & 4
+	\end{eqnarray*}
+	o halde çözüm kümesi $$\text{Ç}=\left\{4\right\}$$ dir.
+\end{cozum}
+
+\begin{ornek}
+	\quad\\
+	$5-\left[3x-2(x-3)\right]=-x-1$ denkleminini çözüm kümesini bulunuz.
+\end{ornek}
+
+\begin{cozum}
+	\begin{eqnarray*}
+		5-\left[3x-2(x-3)\right] & = & -x-1 \\
+		5-\left(3x-2x+6\right)   & = & -x-1 \\
+		5-\left(x+6\right)       & = & -x-1 \\
+		5-x-6                    & = & -x-1 \\
+		-x-1                     & = & -x-1 \\
+		0x                       & = & 0
+	\end{eqnarray*}
+	Burada denklemin çözüm kümesini bulmak için "hangi sayıları sıfırla çarparsam sonuç sıfır çıkar"
+	sorusunu sorarız ve bu sorunun cevabı bize çözüm kümesinin
+	$$\text{Ç}=\mathbb{R}$$
+	olduğunu gösterir.
+\end{cozum}
+
+\begin{ornek}
+	\quad\\
+	$\frac{1}{2}x-2\left(x-3\right)=-\frac{3}{2}\left(x-6\right)$ denkleminini çözüm kümesini bulunuz.
+\end{ornek}
+\begin{cozum}
+	\begin{eqnarray*}
+		\frac{1}{2}x-2\left(x-3\right) &=& -\frac{3}{2}\left(x-6\right) \\
+		\frac{1}{2}x-2x+6              &=& -\frac{3}{2}x+9 \\
+		-\frac{3}{2}x+6                &=& -\frac{3}{2}x+9 \\
+		0x                             &=& 3
+	\end{eqnarray*}
+	Bu denklemi sağlayan herhangi bir $x$ reel sayısı yoktur.O halde çözüm kümesi $$\text{Ç}=\phi$$ dir.
+\end{cozum}
+
+\subsection{İki Bilinmeyenli Doğrusal Denklem Sistemleri}
+\begin{tanim}
+	\quad\\
+	$x$ ve $y$ bilinmeyenler $a,b,c,d\not=0$ olmak üzere
+	\begin{eqnarray*}
+		ax+by &=& e \\
+		cx+dy &=& f
+	\end{eqnarray*}
+	sistemine \textsl{\textbf{iki bilinmeyenli doğrusal denklem sistemi}} denir.\\
+\end{tanim}
+
+
+	$
+	\begin{aligned}
+		2x+3y=6 \\
+		3x+5y=7
+	\end{aligned}
+	$ \quad sistemi iki bilinmeyenli doğrusal denklem sistemidir.
+
+
+\subsubsection{İki Bilinmeyenli Doğrusal Denklem Sisteminin Çözümü}
+\textbf{1)\ Yoketme Yöntemi}
+\renewcommand{\theenumi}{\roman{enumi}}
+\begin{enumerate}
+		\item					
+			Denklemler,taraf tarafa toplanıldığında bilinmeyenlerden bir tanesi yok olacak şekilde
+			uygun sayılarla çarpılır.
+		\item
+			Denklemler taraf tarafa toplanır.
+		\item
+			Toplama sonucunda elde edilen bir bilinmeyenli denklem çözülerek bilinmeyenlerden bir tanesi
+			bulunur.
+		\item
+			Bu bilinmeyenin değeri denklemlerden herhangi birinde yerine koyularak diğer bilinmeyen
+			bulunur.
+\end{enumerate}
+
+
+
+\begin{ornek}
+	\quad\\
+	$
+	\begin{aligned}
+		2x+5y=8 \\
+		3x-2y=7
+	\end{aligned}
+	$
+	\quad denklem sisteminin çözüm kümesini bulunuz.
+\end{ornek}
+
+\begin{cozum}
+	$$
+	\begin{array}{rclc}
+		2/ \ 2x+5y &=& 8 & \\
+		+\quad\  5/ \ 3x-2y &=& -7 &\\ \cline{1-4} 
+	\end{array}
+	$$
+	çarpma işlemleri sonucunda
+	$$
+	\begin{array}{rclc}
+		4x+10y &=& 16 & \\
+		+\quad\  \ 15x-10y &=& -35 &\\ \cline{1-4}
+		19x &=& -19 & \\
+		x   &=& -1  &
+	\end{array}
+	$$
+	elde edilir.$x$ değeri denklemlerden herhangi birinde yerine yazılarak,
+	$$
+	\begin{aligned}
+		2x+5y=8 \Rightarrow 2\cdot(-1)+5y & = 8  \\
+		                            -2+5y & = 8  \\
+					       5y & = 10 \\
+					        y & = 2  \\
+	\end{aligned}
+	$$
+	$y$ bilinmeyeni bulunur ve denklemin çözüm kümesi
+	$$
+	\text{Ç}=\left\{(-1,2)\right\}
+	$$
+	dir.Bu sonuç $2x+5y=8$ ve $3x-2y=-7$ doğrularının $A(-1,2)$ noktasında kesiştiğini gösterir.
+\end{cozum}
+			
+
+\begin{ornek}
+	\quad\\
+	$
+	\begin{aligned}
+		2x-3y  & = 6 \\
+		-4x+6y & = 5
+	\end{aligned}
+	$
+	\quad denklem sisteminin çözüm kümesini bulunuz.
+\end{ornek}
+
+\begin{cozum}
+	$$
+	\begin{array}{rclc}
+		2/ \ 2x-3y          & = & 6  & \\
+		+\quad\ \ -4x+6y    & = & 5  & \\ \cline{1-4}
+		0x+0y		    & = & 17 & \\
+		0		    & = & 17 &
+	\end{array}
+	$$
+	Bu sonuç bize denklemleri sağlayan herhangi bir $(x,y)$ ikilisinin olmadığını yani bu denklemlere karşılık
+	gelen doğruların kesişmediğini dolayısı ile paralel olduğunu gösterir.O halde
+	$$
+	\text{Ç}=\phi
+	$$
+	dir.
+\end{cozum}
+
+\textbf{2)\ Yerine Koyma Yöntemi}
+\begin{enumerate}
+	\item
+		Denklemlerden biri kulanılarak herhengi bir bilinmeyenin değeri diğer bilinmeyen cinsinden elde
+		edilir.
+	\item
+		Bulunan bu değer diğer denklemde yerine yazılarak bir bilinmeyenli doğrusal bir denklem elde edilir.
+		Bu denklem çözülerek bilinmeyenlerden bir tanesi bulunur.
+	\item
+		Bulunan bu değer herhangi bir denklemde yerine yazılarak diğer bilinmeyenin değeri bulunur.
+\end{enumerate}
+
+\begin{ornek}
+	\quad \\
+	$
+	\begin{aligned}
+		-2x+y= & 5 \\
+		x-3y=  & 4 \\
+	\end{aligned}
+	$
+	doğrusal denkleminin çözüm kümesini bulunuz.
+\end{ornek}
+
+\begin{cozum}
+	$$
+	\begin{aligned}
+		-2x+y=5 \Rightarrow y = & 5+2x
+	\end{aligned}
+	$$
+	bulunan y değeri diğer denklemde yerine yazılarak,
+	$$
+	\begin{aligned}
+		x-3y=4 \Rightarrow x-3\cdot \left(5+2x\right)= & 4  \\
+						      x-15-6x= & 4  \\
+						          -5x= & 19 \\
+							    x= & -\frac{19}{5}
+        \end{aligned}
+	$$
+	Denklemlerden herhangi bir tanesinde $x$ değeri yerine yazılırak $y$ değeri bulunur.Fakat $y$`nin 
+	katsayısının $1$ olması sebebiyle $-2x+y=5$ denklemini kullanmak bize kolaylık sağlayacaktır.
+	$$
+	\begin{aligned}
+		x=-\frac{19}{5} \Rightarrow -2\cdot -\frac{19}{5}+y= & 5 \\
+						     \frac{38}{5}+y= & 5 \\
+						                  y= & 5 - \frac{38}{5} \\
+								  y= & \frac{25}{5} - \frac{38}{5} \\
+								  y= & -\frac{-13}{5}
+	\end{aligned}
+	$$
+	O halde çözüm kümesi,
+	$$
+	\text{Ç}=\left\{(-\frac{19}{5},-\frac{13}{5})\right\}
+	$$
+	dir.
+\end{cozum}
+       
+	
+				    
+	
+		
+\subsection{Üç Bilinmeyenli Denklem Sistemleri}
+$x,y,z$ bilinmeyenler olmak üzere 
+\begin{eqnarray*}
+	a_1x+b_1y+c_1z & = & d_1 \\
+	a_2x+b_2y+c_2z & = & d_2 \\
+	a_3x+b_3y+c_3z & = & d_3
+\end{eqnarray*}
+biçimindeki bir sisteme \textsl{\textbf{Üç Bilinmeyenli Doğrusal Denklem Sistemi}} denir.
+\subsection{Uc Bilinmeyenli Doğrusal Denklem Sistemlerinin Cözümü}
+Üc bilinmeyenli doğrusal denklem sistemlerinin cözümü için en genel yol denklemleri ikişerli gruplara ayırmak ve bu iki grupta aynı bilinmeyenleri yok edip iki bilinmeyenli doğrusal denklem sistemi elde etmektir.
+\begin{ornek}
+\end{ornek}
+\begin{eqnarray*}
+	 x+y+z & = & 3 \\
+	 3x-2y+z & = & 1 \\
+	 2x+y-3z & = & 0
+\end{eqnarray*}
+Üç bilinmeyenli doğrusal denklem sisteminin çözüm kümesini bulunuz.
+\begin{equation*}
+	\left.
+	\begin{aligned}
+		x+y+z & = & 3 \\
+		3x-2y+z & = & 2
+	\end{aligned}
+	\right] \quad \text{I.Grup} \quad
+	\left.
+	\begin{aligned}
+		3x-2y+z & = & 2 \\
+		2x+y-3z & = & 0
+	\end{aligned}
+	\right] \quad \text{II. Grup}
+\end{equation*}
+I.Gruptan
+\begin{alignat}{4}
+	-1/ \  x+y+z= & 3 \nonumber \\
+	\underline{+ \hspace{10mm} \strut 3x-2y+z= } & \underline{\strut 2 \qquad}\nonumber \\
+	-2x-3y= & -1 
+\end{alignat}
+II.Gruptan
+\begin{alignat}{4}
+	3/ \  3x-2y+z= & 2 \nonumber \\
+	\underline{+ \hspace{10mm} \strut 2x+y-3z= } & \underline{\strut 0 \qquad}\nonumber \\
+	11x-5y= & 6 
+\end{alignat}
+(2.1) ve (2.2) nolu denklemler birleştirilerek
+\begin{alignat}{4}
+	-5/ \  -2x-3y= & -1 \nonumber \\
+	\underline{+ \hspace{7mm} \strut -3/ \ 11x-5y= } & \underline{\strut 6 \qquad }\nonumber \\
+	-23x= & -23 \nonumber \\
+	x= & 1 
+\end{alignat}
+bulunur.Bulunan bu değer iki bilinmeyenli denklemlerden birinde yerine yazılarak,
+\begin{align}
+	2x-3y=-1 \Rightarrow 2.1-3y & =-1 \nonumber \\
+	2-3y & =-1 \nonumber \\
+	-3y & = -3  \nonumber \\
+	y & = 1
+\end{align}
+Orijinal denklemlerin herhangi bir tanesine (2.3) ve (2.4) eşitlikleri yazılarak,
+\begin{align}
+	x+y+z=3 \Rightarrow 1+1+z & = 3 \nonumber \\
+	2+z & =3 \nonumber \\
+	z & =1  \nonumber  
+\end{align}
+bulunur.O halde çözüm kümesi
+$$
+\text{\c{C}}=\left\{(1,1,1)\right\}
+$$ 
+dir.
+\begin{ornek}
+\end{ornek}
+\begin{eqnarray*}
+	-x+y+z & = & 3 \\
+	3x-2y-3z & = & -7 \\
+	x+5y-4z & = & 9
+\end{eqnarray*}
+Üç bilinmeyenli doğrusal denklem sisteminin çözüm kümesini bulunuz.
+\begin{equation*}
+	\left.
+	\begin{aligned}
+		-x+y+z & = & 3 \\
+		3x-2y-3z & = & -7
+	\end{aligned}
+	\right] \quad \text{I.Grup} \quad
+	\left.
+	\begin{aligned}
+		3x-2y-3z & = & -7 \\
+		x+5y-4z & = & 9
+	\end{aligned}
+	\right] \quad \text{II. Grup}
+\end{equation*}
+I.Gruptan
+\begin{alignat}{4}
+	3/ \  -x+y+z= & 3 \nonumber \\
+	\underline{+ \hspace{10mm} \strut 3x-2y-3z= } & \underline{\strut -7 \qquad}\nonumber \\
+	y= & 2
+\end{alignat}
+II.Gruptan
+\begin{alignat}{4}
+	3x-2y-3z= & -7 \nonumber \\
+	\underline{+ \hspace{10mm}-3\ \ \strut x+5y-4z= } & \underline{\strut 9 \qquad}\nonumber \\
+	-17y+9z= & -34 
+\end{alignat}
+(2.1) ve (2.2) nolu denklemler birleştirilerek,
+\begin{align}
+	-17y+9z=-34 \Rightarrow -17 \cdot 2+9z & =-34 \nonumber \\
+	-34+9z & = -34 \nonumber \\
+	9z & = 0  \nonumber \\ 
+	z & = 0
+\end{align}
+Orijinal denklemlerin herhangi bir tanesine (2.3) ve (2.4) eşitlikleri yazılarak,
+\begin{align}
+	-x+y+z=3 \Rightarrow -x+2+0 & = 3 \nonumber \\
+	-x & =1 \nonumber \\
+	x & =-1  \nonumber  
+\end{align}
+bulunur.O halde çözüm kümesi
+$$
+\text{\c{C}}=\left\{(-1,2,0)\right\}
+$$ 
+dir.
+\chapter{Matrisler ve Determinantlar}
+\section{Matris Kavramı}
+Bir tuhafiyecide satılan ürünleri listelemek istediğimizi düşünelim.Bunu yapmanın en iyi yöntemi
+$$
+\begin{array}{lcr}
+	\quad & Mavi & Kırmızı \\
+	\begin{array}{l} 
+		Pantalon \\
+		Etek 
+	\end{array} & \left[
+				\begin{array}{r}
+					4 \\
+					0
+				\end{array}
+		      \right. & \left.\begin{array}{l} 4 \\ 0 \end{array}\right]
+\end{array}
+$$
+gibi bir yapı kullanmaktır.İşte bu şekildeki dikdörtgensel tablolara Matris adı verilir.
+$$
+\left[
+\begin{array}{cccc}
+	a_{11} & a_{12} & \ldots & a_{1n} \\
+	a_{21} & a_{22} & \ldots & a_{2n} \\
+	a_{i1} & a_{i2} & \vdots & a_{in} \\
+	a_{m1} & a_{m2} & \ldots & a_{mn} 
+\end{array}\right]_{mxn}
+$$
+biçimindeki dikdörtgensel tabloya m\ x n türünden bir matris denir ve kısaca,
+$$
+A=\left[a_{ij}\right]_{mxn}
+$$
+şeklinde gösterilir.
+$ a_{ij} $ elemanında i ye satır indisi , j ye de  sütun indisi denir.$ a_{ij} $,matrisin i. satır, j. sütundaki elemanını göstermektedir.
+\begin{ornek}
+	$$
+	A=\left[
+	\begin{array}{cccc}
+		3 & 5 & 2 \\
+		-1 & 7 & 9 \\
+		6 & 0 & 4 
+	\end{array}
+	\right]_{3\ x\ 3}
+	$$
+	matrisi verilsin.Burada,
+	\begin{align*}
+		a_{11}&=3 & a_{32}&=0 \\
+		a_{23}&=9 & a_{13}&=2 \\
+		a_{31}&=6 & & & \\
+	\end{align*}
+	dir.
+\end{ornek}
+\begin{tanim}
+	\quad \\
+	Bütün elemanları sıfır olan matrisi \textsl{\textbf{Sıfır Matris}} denir ve $0$ ile gösterilir.
+\end{tanim}
+$
+A=\left[
+\begin{array}{ccc}
+	0 & 0 & 0 \\
+	0 & 0 & 0 \\
+\end{array}
+\right]_{2\ x\ 3}
+$
+matrisi $2x3$ tipinde bir sıfır matrisdir.
+
+\begin{tanim}
+	\quad \\
+	Bir matrisin satır sayısı, sütun sayısına eşitse bu matrise \textsl{\textbf{Karesel Matris}} denir.
+\end{tanim}
+$
+A=\left[
+\begin{array}{cc}
+	5 & 1 \\
+	2 & 4 \\
+\end{array}
+\right]_{2\ x\ 2}
+$
+matrisi karesel matrisdir.
+\section{Bir Matrisin Transpozu}
+Bir $ A=\left[a_{ij}\right]_{mxn} $ matrisinde her i için i. satırın i. sütun yapılması ile elde edilen matrise A matrisinin \textbf{transpozu} denir ve $ A^T $ ile gösterilir.
+\begin{ornek}
+\end{ornek}
+$$
+A=\left[\begin{array}{cccc}
+	1 & 4 & 7 \\
+	2 & 5 & 8 \\
+	3 & 6 & 9 
+\end{array}\right]_{3\ x\ 3}
+\Rightarrow
+A^{T}=\left[\begin{array}{cccc}
+	1 & 2 & 3 \\
+	4 & 5 & 6 \\
+	7 & 8 & 9 
+\end{array}\right]_{3\ x\ 3}
+$$
+dir.
+\section{Determinantlar}
+Determinant her bir kare matrisi bir reel sayıyya götüren bir fonksiyondur ve A herhangi bir kare matris olmak üzere
+$$
+det\left[A\right] \text{veya } |A|
+$$ 
+şeklinde gösterilir.
+\subsection{2 x 2 Tipindeki Kare Matrislerin Determinantı}
+$
+A=\left[\begin{array}{cccc}
+	a & b  \\
+	c & d \\
+\end{array}\right]_{2\ x\ 2}
+$
+bir 2 x 2 tipinde kare matris olmak üzere,
+$$
+det\left[A\right]=a\cdot d - b\cdot c
+$$
+dir.
+\begin{ornek}
+\end{ornek}
+$
+\begin{array}{ll}
+	A=\left[\begin{array}{cccc}
+		-3 & 4  \\
+		-2 & 5 \\
+	\end{array}\right]_{2\ x\ 2} \Rightarrow
+	det\left[A\right]&=(-3)\cdot 5 - 4\cdot (-2) \\
+	&=-7 \qquad \text{dir}.
+\end{array}
+$
+\begin{ornek}
+\end{ornek}
+$
+\begin{array}{ll}
+	A=\left[\begin{array}{cccc}
+		-10 & 5  \\
+		-2 & 5 
+	\end{array}\right]_{2\ x\ 2} \Rightarrow
+	det\left[A\right]&=(-10)\cdot 5 - 5\cdot (-2) \\
+	&=-40 \qquad \text{dir}.
+\end{array}
+$
+\begin{ornek}
+\end{ornek}
+$
+A=\left[\begin{array}{cccc}
+	1 & x  \\
+	2 & x^2 
+\end{array}\right]_{2\ x\ 2}=3
+$
+ise $ x $ kaçtır.
+\begin{align*}
+	det[A]=1 \cdot x^2 - 2 \cdot x &= 3 \\
+	x^2-2x-3 &=0 \\
+	(x-3)(x+1)&=0 \quad \Rightarrow x=3\ \vee\ x=-1 \quad \text{dir.}
+\end{align*}
+\subsection{3 x 3 Tipindeki Kare Matrislerin Determinantı}
+\subsubsection{Sarrus Kuralı}
+Sarrus Kuralı 3 x 3 türündeki karesel matrislerin determinantinin hesaplanması için pratik yöntemdir.
+Bu yöntemde matrisin ilk iki satırı(sütunu) matrisin altına(sağına) yazılır.Daha sonra (+) işaretli köşegen
+üzerindeki elemanlar çarpılıp toplanmasıyla elde edilen sonuçtan, (-) işaretli köşegen üzerindeki elemanların çarpılıp
+toplanmasıyla elde edilen sonuç çıkartılır.Bulunan değer matrisin determinantıdır.
+Bir A matrisinin determinantı 
+$$
+det[A] \text{veya} |A|
+$$
+şeklinde gösterilir.\\
+$
+\begin{aligned}
+	\begin{asy}
+		size(4cm,0);
+		pair z1=(1,1);
+		pair z2=(1,0);
+		pair z3=(1,-1);
+		pair z4=(2,1);
+		pair z5=(2.0);
+		pair z6=(2,-1);
+		pair z7=(3,1);
+		pair z8=(3,0);
+		pair z9=(3,-1);
+		pair z10=(1,-2);
+		pair z11=(1,-3);
+		pair z12=(2,-2);
+		pair z13=(2,-3);
+		pair z14=(3,-2);
+		pair z15=(3,-3);
+		label("$a_{11}$",z1);
+		label("$a_{21}$",z2);
+		label("$a_{31}$",z3);
+		label("$a_{12}$",z4);
+		label("$a_{22}$",z5);
+		label("$a_{32}$",z6);
+		label("$a_{13}$",z7);
+		label("$a_{23}$",z8);
+		label("$a_{33}$",z9);
+		label("$a_{11}$",z10);
+		label("$a_{21}$",z11);
+		label("$a_{12}$",z12);
+		label("$a_{22}$",z13);
+		label("$a_{13}$",z14);
+		label("$a_{23}$",z15);
+		draw((0.8,-1.5)--(3.2,-1.5));
+		draw((0.5,1.3)--(0.5,-1.3));
+		draw((3.5,1.3)--(3.5,-1.3));
+		draw(z9--(0,1.8),Arrow,PenMargins);
+		draw(z14--(0,0.8),Arrow,PenMargins);
+		draw(z15--(0,-0.2),Arrow,PenMargins);
+		draw(z7--(0,-1.7),red,Arrow,PenMargins);
+		draw(z8--(0,-2.7),red,Arrow,PenMargins);
+		draw(z9--(0,-3.7),red,Arrow,PenMargins);
+		label("$+$",(-0.5,1.8));
+		label("$+$",(-0.5,0.8));
+		label("$+$",(-0.5,-0.2));
+		label("$-$",(-0.5,-1.7));
+		label("$-$",(-0.5,-2.7));
+		label("$-$",(-0.5,-3.7));
+	\end{asy}
+\end{aligned}
+=\left(a_{11} a_{22} a_{33}
++a_{21} a_{32} a_{13}
++a_{31} a_{12} a_{23} \right)
+-
+\left(a_{13} a_{22} a_{31}
++a_{23} a_{32} a_{11}
++a_{33} a_{12} a_{21} \right)
+$
+\begin{ornek}
+	\quad \vspace{3mm} \\
+	$
+	A=\left[
+	\begin{array}{lcr}
+		-1           & \phantom{-}2  & \phantom{-}3 \\
+		\phantom{-}2 & \phantom{-}5  &           -1 \\
+		\phantom{-}3 & \phantom{-}1  & \phantom{-}2
+	\end{array}\right]_{3\ x\ 3}
+	$
+	matrisinin determinantını hesaplayınız.
+\end{ornek}
+
+\begin{cozum}
+	\quad \\
+	$
+	det[A]=
+	\begin{aligned}
+		\begin{asy}
+			size(3cm,0);
+			pair z1=(1,1);
+			pair z2=(1,0);
+			pair z3=(1,-1);
+			pair z4=(2,1);
+			pair z5=(2.0);
+			pair z6=(2,-1);
+			pair z7=(3,1);
+			pair z8=(3,0);
+			pair z9=(3,-1);
+			pair z10=(1,-2);
+			pair z11=(1,-3);
+			pair z12=(2,-2);
+			pair z13=(2,-3);
+			pair z14=(3,-2);
+			pair z15=(3,-3);
+			label("$-1$",z1);
+			label("$2$",z2);
+			label("$3$",z3);
+			label("$2$",z4);
+			label("$5$",z5);
+			label("$1$",z6);
+			label("$3$",z7);
+			label("$-1$",z8);
+			label("$2$",z9);
+			label("$-1$",z10);
+			label("$2$",z11);
+			label("$2$",z12);
+			label("$5$",z13);
+			label("$3$",z14);
+			label("$-1$",z15);
+			draw((0.8,-1.5)--(3.2,-1.5));
+			draw((0.5,1.3)--(0.5,-1.3));
+			draw((3.5,1.3)--(3.5,-1.3));
+			draw(z9--(0,1.8),Arrow,PenMargins);
+			draw(z14--(0,0.8),Arrow,PenMargins);
+			draw(z15--(0,-0.2),Arrow,PenMargins);
+			draw(z7--(0,-1.7),red,Arrow,PenMargins);
+			draw(z8--(0,-2.7),red,Arrow,PenMargins);
+			draw(z9--(0,-3.7),red,Arrow,PenMargins);
+			label("$+$",(-0.5,1.8));
+			label("$+$",(-0.5,0.8));
+			label("$+$",(-0.5,-0.2));
+			label("$-$",(-0.5,-1.7));
+			label("$-$",(-0.5,-2.7));
+			label("$-$",(-0.5,-3.7));
+		\end{asy}
+	\end{aligned}
+	=\left[(-1) \cdot 5 \cdot 2 + 2 \cdot 1 \cdot 3 + 3 \cdot 2 \cdot (-1) \right]
+	-\left[3 \cdot 5 \cdot 3 + (-1) \cdot 1 \cdot (-1) + 2 \cdot 2 \cdot 2 \right] \\
+	\phantom{6} \hspace{43mm} = \left[-10+6+(-6)\right]-\left[45+1+8\right] \\
+	\phantom{6} \hspace{43mm} = \left(-10 - 54\right) \\
+	\phantom{6} \hspace{43mm} = -64 \\
+	$
+	bulunur.
+\end{cozum}
+
+\begin{ornek}
+	\quad \vspace{3mm} \\
+	$
+	A=\left[
+	\begin{array}{lcr}
+		-4           & -2           & \phantom{-}3 \\
+		\phantom{-}2& \phantom{-}1  &           -1  \\
+		\phantom{-}6 & \phantom{-}3  & \phantom{-}2
+	\end{array}\right]_{3\ x\ 3}
+	$
+	matrisinin determinantını hesaplayınız.
+\end{ornek}
+
+\begin{cozum}
+	\quad \\
+	$
+	det[A]=
+	\begin{aligned}
+		\begin{asy}
+			size(3cm,0);
+			pair z1=(1,1);
+			pair z2=(1,0);
+			pair z3=(1,-1);
+			pair z4=(2,1);
+			pair z5=(2.0);
+			pair z6=(2,-1);
+			pair z7=(3,1);
+			pair z8=(3,0);
+			pair z9=(3,-1);
+			pair z10=(1,-2);
+			pair z11=(1,-3);
+			pair z12=(2,-2);
+			pair z13=(2,-3);
+			pair z14=(3,-2);
+			pair z15=(3,-3);
+			label("$-4$",z1);
+			label("$2$",z2);
+			label("$6$",z3);
+			label("$-2$",z4);
+			label("$1$",z5);
+			label("$3$",z6);
+			label("$3$",z7);
+			label("$-1$",z8);
+			label("$2$",z9);
+			label("$-4$",z10);
+			label("$2$",z11);
+			label("$-2$",z12);
+			label("$1$",z13);
+			label("$3$",z14);
+			label("$-1$",z15);
+			draw((0.8,-1.5)--(3.2,-1.5));
+			draw((0.5,1.3)--(0.5,-1.3));
+			draw((3.5,1.3)--(3.5,-1.3));
+			draw(z9--(0,1.8),Arrow,PenMargins);
+			draw(z14--(0,0.8),Arrow,PenMargins);
+			draw(z15--(0,-0.2),Arrow,PenMargins);
+			draw(z7--(0,-1.7),red,Arrow,PenMargins);
+			draw(z8--(0,-2.7),red,Arrow,PenMargins);
+			draw(z9--(0,-3.7),red,Arrow,PenMargins);
+			label("$+$",(-0.5,1.8));
+			label("$+$",(-0.5,0.8));
+			label("$+$",(-0.5,-0.2));
+			label("$-$",(-0.5,-1.7));
+			label("$-$",(-0.5,-2.7));
+			label("$-$",(-0.5,-3.7));
+		\end{asy}
+	\end{aligned}
+	=\left[(-4) \cdot 1 \cdot 2 + 2 \cdot 3 \cdot 3 + 6 \cdot (-2) \cdot (-1) \right]
+	-\left[6 \cdot 1 \cdot 3 + (-4) \cdot 3 \cdot (-1) + 2 \cdot (-2) \cdot 2 \right] \\
+	\phantom{6} \hspace{43mm} = \left(-8+18+12\right)-\left(18+12-8\right) \\
+	\phantom{6} \hspace{43mm} = \left(22 - 22\right) \\
+	\phantom{6} \hspace{43mm} = 0 \\
+	$
+	bulunur.
+\end{cozum}
+\subsection{nxn Tipindeki Karesel Matrislerin Determinantı}
+\begin{tanim}
+	\quad \\
+	$A=\left[a_{ij}\right]_{nxn}$ nxn tipinde bir karesel matris olmak üzere,$A$'nın herhangi bir $a_{ij}$
+	elemanının bulunduğu satır ve sütun silindiğinde kalan matrisin determinantına $a_{ij}$ elemanının
+	Minörü denir ve $M_{ij}$ şeklinde gösterilir.
+\end{tanim}
+
+\begin{tanim}
+	$A=\left[a_{ij}\right]_{nxn}$ nxn tipinde bir karesel matris ve $a_{ij}$ elemanının minörü $M_{ij}$ olsun.
+	$$
+	A_{ij}=\left(-1\right)^{i+j} \cdot M_{ij}
+	$$
+	sayısına $a_{ij}$ elemanının Kofaktörü denir.
+\end{tanim}
+
+\begin{ornek}
+	\quad \vspace{3mm} \\
+	$
+	A=\left[
+	\begin{array}{lcr}
+		-3           & -1           & \phantom{-}3\  \\
+			     &	            & \              \\
+		\phantom{-}1 & \phantom{-}2 & -1\            \\
+		       	     &              & \              \\
+		\phantom{-}2 & \phantom{-}3 & -2\ 
+	\end{array}\right]_{3\ x\ 3}
+	$
+	matrisinin determinantını hesaplayınız.
+\end{ornek}
+
+\begin{cozum}
+	\quad \\
+	$
+	det[A]=
+	\begin{aligned}
+		\begin{asy}
+			size(3cm,0);
+			pair z1=(1,1);
+			pair z2=(1,0);
+			pair z3=(1,-1);
+			pair z4=(2,1);
+			pair z5=(2.0);
+			pair z6=(2,-1);
+			pair z7=(3,1);
+			pair z8=(3,0);
+			pair z9=(3,-1);
+			label("$-3$",z1);
+			label("$1$",z2);
+			label("$2$",z3);
+			label("$-1$",z4);
+			label("$2$",z5);
+			label("$3$",z6);
+			label("$3$",z7);
+			label("$-1$",z8);
+			label("$-2$",z9);
+			draw((0.8,-1.5)--(3.2,-1.5));
+			draw((0.5,1.3)--(0.5,-1.3));
+			draw((3.5,1.3)--(3.5,-1.3));
+			draw(z2--z8,dotted);
+			draw(z4--z6,dotted);
+		\end{asy}
+	\end{aligned}
+	=\left[(-4) \cdot 1 \cdot 2 + 2 \cdot 3 \cdot 3 + 6 \cdot (-2) \cdot (-1) \right]
+	-\left[6 \cdot 1 \cdot 3 + (-4) \cdot 3 \cdot (-1) + 2 \cdot (-2) \cdot 2 \right] \\
+	\phantom{6} \hspace{43mm} = \left(-8+18+12\right)-\left(18+12-8\right) \\
+	\phantom{6} \hspace{43mm} = \left(22 - 22\right) \\
+	\phantom{6} \hspace{43mm} = 0 \\
+	$
+	bulunur.
+\end{cozum}
+\begin{center}
+	\begin{asy}
+import math;
+import graph;
+size(6cm,0);
+real f(real x) {return sin(x);}
+pair F(real x) {return (x,f(x));}
+xaxis("$x$",red,Arrow);
+yaxis("$y$",red,Arrow);
+draw(graph(f,-3.0,0.7,operator ..));
+draw(graph(f,1.3,3.0,operator ..));
+label("$\frac{x^3-3x}{x-1}$",F(3.0),NW);
+	\end{asy}
+\end{center}
+\end{document}

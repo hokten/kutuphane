@@ -1,0 +1,72 @@
+<html>
+	<head>
+		<style>
+			body,td
+			{
+				font-size:12px;
+				color:black;
+				font-family:verdana,arial,sans-serif;
+			}
+			span	
+			{
+				font-size:12px;
+				color:red;
+				font-weight:bold;
+			}
+		</style>
+	</head>
+	<body bgcolor=#FFF3E5>
+		<center>
+			<table bgcolor=black width="800" cellpadding="5" cellspacing="1">
+				<tr>
+					<td bgcolor=#FEFFE5>
+						<br>
+						<br>
+						<p>
+						Connect desktop apps using D-BUS
+						Helping applications talk to one another developerWorks
+						</p>
+						<p>
+						D-BUS is an up-and-coming message bus and activation system that is <span title="Gayret sarfetmek,çabalamak">set to</span>
+						<span style="color:blue" title="Başarmak,kazanmak">achieve</span> <span title="Derin,şiddetli">deep</span> 
+						<span style="color:blue" title="yaygınlık,nüfuz">penetration</span> in the Linux desktop. Learn why it was created, 
+						what it can be used for, and where it is going. 
+						</p>
+						<p>
+						D-BUS is <span title="Aslında,gerçekte">essentially</span> an implementation of inter-process communication (IPC).
+						<span title="Buna rağmen">However</span>, <span style="color:blue" title="Muhtelif,çeşitli,bir kaç">several</span> features <span title="Uzaklaştırmak">distance</span> D-BUS from the <span title="Utanma,damga">stigma</span> of being "Yet Another IPC Implementation.
+						There are many different IPC implementations because each <span title="Hedeflemek,amaçlamak">aims</span> to solve a <span title="Ösel,belirli">particular</span> well-defined problem. CORBA is a powerful solution for complex IPC in object-orientation programming.
+						DCOP is a lighter IPC framework with <span title="Daha az">less</span> power, but is well integrated into the K Desktop Environment.
+						SOAP and XML-RPC are designed for Web service and <span title="Bundan dolayı,bu nedenle">therefore</span> use HTTP as the transport protocol. D-BUS was designed for desktop application and OS communication.
+						</p>
+						<p>
+						<b>Desktop application communication</b><br><br>
+						The typical desktop has multiple applications running, and they often need to talk to each other.
+						DCOP is a solution for KDE, but is <span title="Bağlanmak,birleşmek">tied to</span> Qt and so is not used in other desktop environments.
+						<span title="Benzer biçimde">Similarly</span>, Bonobo is a solution for GNOME, but is <span alt="Oldukça,tamamen">quite</span> heavy, being based on CORBA. It is also tied to GObject, so it is not used outside of GNOME.
+						D-BUS aims to replace DCOP and Bonobo for simple IPC and to integrate these two desktop environments.
+						Because the dependencies for D-BUS are <span title="Saklamak,tutmak">kept</span> as small as possible, other applications that would like to use D-BUS don't have to worry about <span title="Şişmek,kabarmak">bloating</span> dependencies. 
+						<p>
+						<b>Desktop/Operating System communication</b><br><br>
+						The term "operating system" here includes not only the kernel <span title="Bondan başka">but also</span> the system daemons.
+						For example, with a D-BUS-enabled udev (the Linux 2.6 replacement for devfs, providing dynamic /dev directories), a signal is <span title="Yaymak,dışarı vermek,fışkırtmak">emitted</span> when a device (such as a USB camera) is inserted.
+						This <span title="... için izin vermek">allows</span> for <span title="Sıkı">tighter</span> integration with the hardware in the desktop, <span title="..-e yol açar">leading to</span> an improved user experience.
+						</p>
+						<b>D-BUS features</b><br><br>
+						<p>
+						D-BUS has several interesting features that make it look like a very <span title="Ümit veren,gelecek vaat eden">promising</span> <span style="color:blue" title="Aday,namzet">candidate</span>.
+						</p>
+						<p>
+						The protocol is low-<span title="Gecikme süresi">latency</span> and low-<span title="Ek yük">overhead</span>, designed to be small and <span title="Yetenekli,becerikli,ehil">efficient</span> to minimize <span title="Gidiş-dönüş yolculuğu">round-trips</span>. <span style="color:blue" title="Üstelik,ilaveten">In addition</span>, the protocol is binary, not textual, which removes the <span title="Masraflı,değerli">costly</span> <span style="color:blue" title="sıralama">serialization</span> process.
+						The use cases are <span title="Önyargılı">biased</span> towards processing on the local machine, so all messages are sent in the <span title="Doğal,yerli">native</span> byte ordering.
+						The byte ordering is <span title="Beyan etmek,tespit etmek,saptamak">stated</span> in each message, so if a D-BUS message travels over a network to a remote host, it can still be parsed correctly.
+						D-BUS is easy to use from a developer's <span title="Bakış açısı,görüş">point of view</span>. The <span title="tel">wire</span> protocol is simple to understand, and the client library wraps it in an <span title="Sezgisel">intuitive</span> <span style="color:blue" title="Tavır,davranış,şekil,biçim">manner</span>.
+						The library has also been designed to be wrapped by other systems. It is expected that GNOME will create wrappers around D-BUS using GObject (indeed these partially exist, integrating D-BUS into their event loop), and that KDE will create similar wrappers using Qt.
+						There is already a Python wrapper that has a <span title="Hayli,çok">much</span> simpler interface, <span title="Bundan ötürü,dolayı">due to</span> Python's object-orientation and flexible typing.
+						Finally, D-BUS is being developed <span title="Şemsiyesi altına almak">under the umbrella of</span> freedesktop.org, where interested members from GNOME, KDE, and <span title="Başka yerde">elsewhere</span> <span style="color:blue" title="İştirak etmek,katılmak">participate</span> in the design and implementation. 
+					</td>
+				</tr>
+			</table>
+		</center>
+	</body>
+</html>

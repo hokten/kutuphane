@@ -1,0 +1,129 @@
+\textless\documentclass[a4paper,10pt]{book}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage[lflt]{floatflt}
+\usepackage{/usr/share/texmf/tex/latex/asymptote/asymptote}
+\usepackage{pstricks,pst-node}
+\usepackage{mathpazo}
+\setcounter{chapter}{2}
+\voffset	=-10.0mm
+\hoffset	=-0.5in
+\textheight	=614pt
+\footskip	=-40mm
+%\topmargin	=30mm	
+%\oddsidemargin	=-10.mm		
+\evensidemargin	=5.mm		
+%\headheight	=0.mm
+%\headsep	=0.mm
+%\textheight	=220.mm
+\textwidth	=180.mm
+\begin{document}
+\psset{nodesep=3pt}
+\def\xstrut{\vphantom{\frac{(A)^1}{(B)^1}}}
+\title{Ders Notları}
+\date{}
+\def\chaptername{Bölüm}
+\newtheoremstyle{italik}{}{}{\normalfont}{}{\bfseries}{.}{ }{} % basic definitions, use roman font: 
+\theoremstyle{italik}
+\newtheorem{ornek}{Örnek}[chapter]
+\newtheorem*{cozum}{Çözüm}
+\newtheorem*{tanim}{Tanım}[chapter]
+\maketitle
+\chapter{Sayılar}
+\chapter{Say}
+
+\section{Sayılar}
+\subsection{Doğal Sayılar}
+$\mathbb{N}=\left\{0,1,2,3,4,5,6,7,8,9,10,11,12,\ldots\right\}$ kümesine "Doğal Sayılar Kümesi" denir ve $\mathbb{N}$ ile
+gösterilir.
+\subsubsection{Doğal Sayıların Özellikleri}
+$\forall a,b,c \in \mathbb{N}$ için
+\begin{enumerate}
+	\item $a=a$ (yansıma özelliği)
+	\item $a=b \Leftrightarrow b=a$ dır. (simetri özelliği)
+	\item $a=b$ ve $b=c \Rightarrow a=c$ dir. (geçişme özelliği)
+	\item $a=b \Leftrightarrow a+c=b+c$ dir.
+	\item $a=b \Leftrightarrow a \cdot c=b \cdot c$ dir.
+\end{enumerate}
+özellikleri sağlanır.
+
+\subsubsection{Sayma Sayıları Kümesi}
+$\mathbb{N}^+=\left\{1,2,3,4,5,6,7,8,9,10,11,\ldots\right\}$ kümesine "Sayma Sayıları Kümesi" denir.Dikkat edilirse,
+Sayma sayıları kümesi Doğal sayılar kümesinden $0$ sayısının çıkarılmasıyla elde edilmiştir.
+
+\subsubsection{Çift Doğal Sayılar}
+$ 2 $ ile bölündüğünde $ 0 $ kalanını veren doğal sayılara "Çift Doğal Sayılar" denir.Tanımdan da anlaşılacağı gibi
+Çift doğal sayılar kümesi $ \mathbb{N}_{\text{ç}} $ ile gösterilirse,
+$$ \mathbb{N}_{\text{ç}}=\left\{0,2,4,6,8,10,12,14,\ldots\right\} $$
+dir.
+\subsubsection{Tek Doğal Sayılar}
+$ 2 $ ile bölündüğünde $ 1 $ kalanını veren doğal sayılara "Tek Doğal Sayılar" denir.Tek doğal sayılar kümesi 
+$ \mathbb{N}_{t} $ ile gösterilirse,
+$$ \mathbb{N}_{t}=\left\{1,3,5,7,9,11,\ldots\right\} $$
+dir.
+
+\subsubsection{Asal Sayılar}
+\begin{tanim}
+	\quad\\
+	Pozitif bölenler kümesi iki elemanlı olan doğal sayılara "Asal Sayılar" denir.
+\end{tanim}
+
+\begin{ornek}
+	\quad\\
+	$ 1 $ sayısını pozitif bölenleri kümesi $A$ ile gösterilirse,
+	$$ A=\left\{1\right\} $$
+	dır.
+	Bu küme bir elemanlı olduğundan $ 1 $ sayısı asal sayı \underline{değildir}.\\
+	Benzer şekilde $ 2 $ sayısının pozitif bölenleri kümesi $ B $ ile gösterilirse,
+	$$ B=\left\{1,2\right\} $$
+	olur ki bu $ 2 $ sayısının asal olduğunu gösterir.\\
+	$ 9 $ sayısının pozitif bölenleri kümesi $ C $ ile gösterilirse,
+	$$ B=\left\{1,3,9\right\} $$
+	olur.$ 3 $ sayısının asal sayı değildir.
+\end{ornek}
+Bu bilgiler ışığında, Asal sayılar kümesi $ A $ ile gösterilirse,
+$$ A=\left\{2,3,5,7,11,13,17,19,\ldots\right\} $$
+dır.
+Asal sayılar, 1'den ve kendisinden başka hiç bir pozitif böleni olmayan sayılardır diye tanımlanırsa hata yapılmış
+olur.Gerçekten $ 1 $ sayısı hem $ 1 $'e hem de kendine bölünür ve de başka pozitif böleni yoktur.Fakat asal sayıların
+tanımı gereği $ 1 $'in asal sayı olmadığını daha önce görmüştük.
+Buna rağmen tanım aşağıdaki haliyle doğrudur.
+\begin{tanim}
+	\quad\\
+	$ 1 $'den ve kendisinden başka hiçbir pozitif sayıya bölünmeyen,$ 1 $'den büyük doğal sayılara \textbf{Asal Sayılar}
+	denir.
+\end{tanim}
+\subsubsection{Aralarında Asal Sayılar}
+$ 1 $'den başka pozitif ortak böleni olmayan iki doğal sayıya \textbf{Aralarında asaldırlar} denir.
+\begin{ornek}
+	3 ile 5 sayıları arlarında asaldırlar.\\
+	4 ile 5 sayıları aralarında asaldırlar.\\
+	9 ile 4 sayıları aralarında asaldırlar.
+\end{ornek}
+Örneklerden de anlaşılacağı gibi iki sayının aralarında asal sayılar olması için asal olmaları gerekmez.Gerçekten
+4 ve 9 asal değillerdir ama 4 ile 9 aralarında asal sayılardır.
+\subsection{Tam Sayılar}
+$\mathbb{Z}=\left\{\ldots ,-7,-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7,\ldots\right\}$ kümesine "Tam Sayılar Kümesi" denir ve $\mathbb{Z}$ ile
+gösterilir.
+\chapter{Cebir}
+Cebir,bilinmeyen değerlerin,işaretler ve harflerle sembolize edilmesi esasına dayanır \\[1.5cm]
+\newrgbcolor{lila}{0.6 0.2 0.5}
+\newrgbcolor{darkyellow}{1 0.9 0}
+\def\xstrut{\vphantom{\frac{(A)^1}{(B)^1}}}
+\begin{equation*}
+	\rput[l](-2,2){\rnode{a}{Gerilim}}
+	\rput[l](2,2){\rnode{c}{Direnç}}
+	\rput[l](1,-2){\rnode{b}{Akım}}
+	\rnode[t]{v}{\psframebox*[fillcolor=yellow,linestyle=none]{\xstrut V}} =
+	\rnode[t]{i}{\psframebox*[fillcolor=cyan,linestyle=none]{\xstrut I}} \cdot
+	\rnode[t]{r}{\psframebox*[fillcolor=green,linestyle=none]{\xstrut R}}
+	\ncline[nodesep=3pt]{<->}{a}{v}
+	\ncline[nodesep=3pt]{<->}{b}{i}
+	\ncline[nodesep=3pt]{<->}{c}{r}
+\end{equation*}\\[0.25cm]
+Yukarıda ki örnekten de anlaşılabileceği gibi $V,I$ ve $R$ sembolleri sayıları temsil etmektedir.Örneğin $V$ gerilimi
+$I$ devreden geçen akımı $R$ ise direnci gösterir.
+\end{document}
